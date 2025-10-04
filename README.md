@@ -1,3 +1,4 @@
+[![Unix Sort Lite CI](https://github.com/alexey0b/unix_sort_lite/actions/workflows/ci.yaml/badge.svg)](https://github.com/alexey0b/unix_sort_lite/actions/workflows/ci.yaml)
 [![Coverage Status](https://coveralls.io/repos/github/alexey0b/unix_sort_lite/badge.svg?branch=main)](https://coveralls.io/github/alexey0b/unix_sort_lite?branch=main)
 
 # 🧘🏼‍♀️ Unix Sort Lite
