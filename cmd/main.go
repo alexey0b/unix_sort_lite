@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"io"
-	"log"
 	"os"
 	"unix_sort_lite/internal/domain"
 	"unix_sort_lite/internal/usecase"
@@ -47,33 +46,36 @@ func main() {
 		// Читаем из stdin если файлы не указаны
 		b, err := io.ReadAll(os.Stdin)
 		if err != nil {
-			log.Fatal("failed to read from stdin:", err)
+			fmt.Fprintln(os.Stderr, "Error:", err)
+			os.Exit(1)
 		}
 		input = string(b)
 	} else {
 		// Читаем из файла
 		file, err := os.Open(args[0])
 		if err != nil {
-			log.Fatalf("failed to open '%s': %v", args[0], err)
+			fmt.Fprintln(os.Stderr, "Error:", err)
+			os.Exit(1)
 		}
 		defer file.Close() //nolint:errcheck
 
 		b, err := io.ReadAll(file)
 		if err != nil {
-			log.Fatal("failed to read file:", err)
+			fmt.Fprintln(os.Stderr, "Error:", err)
+			os.Exit(1)
 		}
 		input = string(b)
 	}
 
 	result, err := usecase.Sort(input, opts)
 	if err != nil {
-		fmt.Println(err)
+		fmt.Fprintln(os.Stderr, "Error:", err)
 		os.Exit(1)
 	}
 
 	if opts.Check {
 		if input != result {
-			fmt.Println(domain.ErrWrongOrder)
+			fmt.Fprintln(os.Stderr, "Error:", domain.ErrWrongOrder)
 			os.Exit(1)
 		}
 		return

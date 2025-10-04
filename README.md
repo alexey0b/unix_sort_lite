@@ -1,3 +1,5 @@
+[![Coverage Status](https://coveralls.io/repos/github/alexey0b/unix_sort_lite/badge.svg?branch=main)](https://coveralls.io/github/alexey0b/unix_sort_lite?branch=main)
+
 # 🧘🏼‍♀️ Unix Sort Lite
 
 Легковесная реализация утилиты `sort` на Go с поддержкой основных флагов Unix sort.

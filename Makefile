@@ -15,7 +15,7 @@ test:
 	@go test -v ./internal/usecase
 
 test-cover:
-	@go test ./internal/usecase -cover
+	@go test -v -covermode=atomic -coverprofile=coverage.out ./internal/usecase
 
 # Качество кода
 fmt:
