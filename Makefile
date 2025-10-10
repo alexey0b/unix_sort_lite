@@ -3,11 +3,11 @@ build:
 	@go build -o unix_sort_lite cmd/main.go
 
 # Запуск утилиты
-sort:
+sort:build
 ifdef FLAGS
-	@go run cmd/main.go $(FLAGS) $(INPUT_FILE)
+	@./unix_sort_lite $(FLAGS) $(INPUT_FILE)
 else
-	@go run cmd/main.go $(INPUT_FILE)
+	@./unix_sort_lite $(INPUT_FILE)
 endif
 
 # Тестирование

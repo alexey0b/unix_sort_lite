@@ -30,6 +30,12 @@
 git clone https://github.com/alexey0b/unix_sort_lite
 ```
 
+- **Соберите проект:**
+
+```sh
+make build
+```
+
 - **Посмотрите все доступные команды**
 
 ```bash
@@ -38,17 +44,17 @@ make help
 
 ---
 
-## Примеры использования утилиты на файле `input.txt`
+## Примеры использования утилиты на текстовых файлов из директории `/example`
 
 ### Стандартная сортировка
 
 ```bash
 make sort INPUT_FILE='example/words.txt'
 # Output:
-alert
-go
-package
-test
+# alert
+# go
+# package
+# test
 ```
 
 ### Числовая сортировка
@@ -56,9 +62,9 @@ test
 ```bash
 make sort FLAGS='-n' INPUT_FILE='example/nums.txt'
 # Output:
-1
-2
-10
+# 1
+# 2
+# 10
 ```
 
 ### Сортировка по месяцам
@@ -66,9 +72,9 @@ make sort FLAGS='-n' INPUT_FILE='example/nums.txt'
 ```bash
 make sort FLAGS='-M' INPUT_FILE='example/months.txt'
 # Output:
-Jan
-Feb
-Mar
+# Jan
+# Feb
+# Mar
 ```
 
 ### Комбинированные флаги
@@ -76,9 +82,9 @@ Mar
 ```bash
 make sort FLAGS='-nr' INPUT_FILE='example/nums.txt'
 # Output:
-10
-2
-1
+# 10
+# 2
+# 1
 ```
 
 ---
@@ -94,5 +100,20 @@ make sort FLAGS='-nr' INPUT_FILE='example/nums.txt'
 ### Зависимости
 
 - **[spf13/pflag](https://github.com/spf13/pflag)** - POSIX/GNU-style флаги
+- **[stretchr/testify](https://github.com/stretchr/testify)** - Тестирование
 
 ---
+
+## 📚 Полезные команды
+
+```bash
+# Посмотреть все доступные команды
+make help
+
+# Запустить тесты
+make test
+
+# Запустить линтер (должен быть установлен golangci-lint)
+make lint 
+
+```
