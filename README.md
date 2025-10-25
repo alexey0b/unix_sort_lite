@@ -117,3 +117,9 @@ make test
 make lint 
 
 ```
+
+**Справочная информация:**
+
+- [Официальная документация GNU cut](https://www.gnu.org/software/coreutils/manual/html_node/sort-invocation.html#sort-invocation)
+
+---
